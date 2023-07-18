@@ -1,0 +1,10 @@
+.country-list{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.country-card {
+    width: 21rem;
+}
