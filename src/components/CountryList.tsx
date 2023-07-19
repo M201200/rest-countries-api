@@ -2,6 +2,7 @@ import { useFetchCountryData } from '../hooks/useFetchCountryData'
 import { CountryData } from "../types/CountryData"
 import CountryCard from "./CountryCard"
 import "./CountryList.css"
+import Navigation from './Navigation'
 
 const CountryList = () => {
 
@@ -30,9 +31,12 @@ const countriesQuery = useFetchCountryData()
         })
 
         return (
-            <main className='country-list' key={'countryList'}>
+            <>
+            <Navigation />
+             <main className='country-list' key={'countryList'}>
                 {countries}
-            </main>
+            </main> 
+            </>
       )
       
 }

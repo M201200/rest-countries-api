@@ -24,7 +24,7 @@ const borderCountries = data.filter(country => currentCountryBorders?.includes(c
 
 function toFormat (property?: string | string[]) {
     if(typeof property === 'undefined' || !property.length) return "Not found"
-    if(property instanceof Array && property.length) return property.join(', ')
+    if(property instanceof Array) return property.join(', ')
     return property
 }
 
@@ -47,7 +47,7 @@ function toFormat (property?: string | string[]) {
             <p>Languages: {toFormat(currentCountryData.languages?.map(lang => lang.name))}</p>
         </div>
         <div className="country-borders">
-            <p>Border Countries: {borderCountries.length? borderCountries: "None"}</p>
+            <p>Border Countries: {borderCountries?.length? borderCountries: "None"}</p>
         </div>
         
         </section>

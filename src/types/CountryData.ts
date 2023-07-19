@@ -3,28 +3,28 @@ export type CountryData = {
     topLevelDomain?: (string)[];
     alpha2Code?: string;
     alpha3Code?: string;
-    callingCodes?: (string)[] | null;
+    callingCodes?: (string)[];
     capital?: string;
-    altSpellings?: (string)[] | null;
+    altSpellings?: (string)[];
     subregion?: string;
     region?: string;
     population?: number;
-    latlng?: (number)[] | null;
+    latlng?: (number)[];
     demonym?: string;
-    area?: number | null;
-    timezones?: (string)[] | null;
+    area?: number;
+    timezones?: (string)[];
     borders?: (string)[];
     nativeName?: string;
     numericCode?: string;
     flags?: Flags;
-    currencies?: (CurrenciesEntity)[] | null;
-    languages?: (LanguagesEntity)[] | null;
+    currencies?: (CurrenciesEntity)[];
+    languages?: (LanguagesEntity)[];
     translations?: Translations;
     flag?: string;
-    regionalBlocs?: (RegionalBlocsEntity)[] | null;
-    cioc?: string | null;
+    regionalBlocs?: (RegionalBlocsEntity)[];
+    cioc?: string;
     independent?: boolean;
-    gini?: number | null;
+    gini?: number;
   }
 type Flags = {
     svg: string;
@@ -36,17 +36,17 @@ type CurrenciesEntity = {
     symbol: string;
   }
 type LanguagesEntity = {
-    iso639_1?: string | null;
+    iso639_1?: string;
     iso639_2: string;
     name: string;
-    nativeName?: string | null;
+    nativeName?: string;
   }
   type Translations = {
     br: string;
     pt: string;
     nl: string;
     hr: string;
-    fa?: string | null;
+    fa?: string;
     de: string;
     es: string;
     fr: string;
@@ -57,7 +57,7 @@ type LanguagesEntity = {
 type RegionalBlocsEntity = {
     acronym: string;
     name: string;
-    otherAcronyms?: (string)[] | null;
-    otherNames?: (string)[] | null;
+    otherAcronyms?: (string)[];
+    otherNames?: (string)[];
   }
   
