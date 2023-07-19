@@ -1,5 +1,5 @@
 export type CountryData = {
-    name?: string;
+    name: string;
     topLevelDomain?: (string)[];
     alpha2Code?: string;
     alpha3Code?: string;

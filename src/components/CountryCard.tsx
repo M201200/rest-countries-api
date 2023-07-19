@@ -9,17 +9,17 @@ const CountryCard = ({flag = '/',
     return (
         <>
         <NavLink to={`/${id}`}>
-        <div className="country-card">
-        <picture>
-            <img src={flag} alt="country-flag" />
-        </picture>
-        <section>
-            <h3>{name}</h3>
-            <p>Population: {population}</p>
-            <p>Region: {region}</p>
-            <p>Capital: {capital}</p>
-        </section>
-        </div>
+            <div className="country-card">
+                <picture>
+                    <img src={flag} alt="country-flag" />
+                </picture>
+                <section>
+                    <h3>{name}</h3>
+                    <p>Population: {population}</p>
+                    <p>Region: {region}</p>
+                    <p>Capital: {capital}</p>
+                </section>
+            </div>
         </NavLink>
         </>  
       )

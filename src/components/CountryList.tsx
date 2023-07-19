@@ -1,10 +1,18 @@
+import { useRecoilValue } from "recoil";
+import { searchCountryValue, searchByRegion } from "./atoms";
 import { useFetchCountryData } from '../hooks/useFetchCountryData'
+
 import { CountryData } from "../types/CountryData"
 import CountryCard from "./CountryCard"
-import "./CountryList.css"
 import Navigation from './Navigation'
 
+import "./CountryList.css"
+
 const CountryList = () => {
+
+const searchValue = useRecoilValue(searchCountryValue)
+const regionValue = useRecoilValue(searchByRegion)
+const searchRegExp = new RegExp(`(^${searchValue})|(\\s${searchValue})`, "i")
 
 const countriesQuery = useFetchCountryData()
 
@@ -16,10 +24,13 @@ const countriesQuery = useFetchCountryData()
       if (isLoading) return <h2>Loading...</h2> 
       if (isError) return <h2>{JSON.stringify(error)}</h2>
 
-      const countries = data.map((card) => {
+      let filteredData = searchValue? data.filter(country => searchRegExp.test(country.name)): data
+      filteredData = regionValue? filteredData.filter(country => country.region === regionValue): filteredData
+      
+      const countries = filteredData.map((card) => {
             return (
                 <CountryCard 
-                    key={card.alpha3Code} 
+                    key={card.name} 
                     flag={card.flags?.svg}
                     name={card.name}
                     population={card.population?.toLocaleString()}
