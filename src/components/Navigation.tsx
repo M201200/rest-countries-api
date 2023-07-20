@@ -1,4 +1,3 @@
-// import { useState } from "react";
 import { searchCountryValue, searchByRegion } from "./atoms";
 import { useRecoilState } from "recoil";
 

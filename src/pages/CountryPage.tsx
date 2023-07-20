@@ -1,26 +1,18 @@
 import { NavLink, useParams } from "react-router-dom"
-import { useFetchCountryData } from "../hooks/useFetchCountryData"
-import { CountryData } from "../types/CountryData"
+import { CountryData } from "../data/CountryData"
 
 export default function CountryPage() {
 
-const countriesQuery = useFetchCountryData()
 const { countryId } = useParams()
 
-const isError = countriesQuery.isError
-const error = countriesQuery.error
-const isLoading = countriesQuery.isLoading
-
-if (isLoading) return <h2>Loading...</h2> 
-if (isError) return <h2>{JSON.stringify(error)}</h2>
-
-const data = countriesQuery.data as CountryData[]
-const currentCountryData = data.find(country => country.alpha3Code === countryId) as CountryData
+const data = CountryData
+const currentCountryData = data.find(country => country.name === countryId)!
 
 const currentCountryBorders = currentCountryData.borders
-const borderCountries = data.filter(country => currentCountryBorders?.includes(country.alpha3Code!)).map(country => {
-    return <NavLink to={`/${country.alpha3Code!}`} key={country.alpha3Code}>{country.name} </NavLink>
-})
+const borderCountries = data.filter(country => currentCountryBorders?.includes(country.alpha3Code))
+                            .map(country => {
+                return <NavLink to={`/${country.name}`} key={country.name}>{country.name} </NavLink>
+            })
 
 function toFormat (property?: string | string[]) {
     if(typeof property === 'undefined' || !property.length) return "Not found"
@@ -29,7 +21,7 @@ function toFormat (property?: string | string[]) {
 }
 
   return (
-        <main className='country-page' key={currentCountryData.alpha3Code}>
+        <main className='country-page' key={currentCountryData.name}>
         <NavLink to={"/"} key={"'countryList'"}>Back</NavLink>
         <picture>
             <img src={currentCountryData.flags?.svg} alt="country-flag" />
