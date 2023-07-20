@@ -1,4 +1,4 @@
-import { searchCountryValue, searchByRegion } from "./atoms";
+import { searchCountryValue, searchByRegion } from "../atoms/atoms";
 import { useRecoilState } from "recoil";
 
 const Navigation = () => {

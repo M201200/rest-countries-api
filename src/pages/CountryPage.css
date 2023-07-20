@@ -1,0 +1,27 @@
+.country-page {
+    display: flex;
+    align-items: center;
+    gap: 4em;
+    flex-wrap: wrap;
+
+    width: 85vw;
+    margin-inline: auto;
+}
+
+.country-page section {
+    flex: 1 1 12rem;
+}
+
+.country-page picture {
+    width: min(28rem + 4vw, 85vw);
+}
+
+.country-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.country-borders {
+    margin-top: 2.5em;
+}
