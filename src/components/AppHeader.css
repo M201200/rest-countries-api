@@ -1,10 +1,12 @@
 .app-header{
-    color: var(--text-color);
     background-color: var(--bg-element-color);
 
     display: flex;
     justify-content: space-between;
     align-content: baseline;
+    flex-wrap: wrap;
+    gap: 1rem;
+
     padding: 2rem;
 }
 

@@ -1,8 +1,8 @@
 import { useParams } from "react-router-dom"
-import AppLink from "../components/AppLink"
 import { CountryData } from "../data/CountryData"
-import "./CountryPage.css"
+import AppLink from "../components/AppLink"
 import PageNotFound from "./PageNotFound"
+import "./CountryPage.css"
 
 export default function CountryPage() {
 
@@ -36,7 +36,7 @@ function toFormat (property?: string | string[]) {
             </picture>
 
         <section>
-            <h2>{currentCountryData.name}</h2>
+            <h1 className="country-name">{currentCountryData.name}</h1>
         <div className="country-info">
             <div className="country-info-main">
                 <p><b>Native name:</b> {toFormat(currentCountryData.nativeName)}</p>

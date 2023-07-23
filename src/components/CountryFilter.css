@@ -1,7 +1,4 @@
 .country-filter{
-    color: var(--text-color);
-    background-color: var(--bg-color);
-
     display: flex;
     justify-content: space-between;
     align-content: baseline;
@@ -31,8 +28,6 @@
 }
 
 .search-input input {
-    color: var(--text-color);
-
     background-color: var(--bg-element-color);
 
     border: none;

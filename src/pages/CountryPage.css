@@ -1,8 +1,6 @@
 .page-navigation {
-    background-color: var(--bg-color);
-
     display: flex;
-    padding: 1rem 3rem;
+    padding: 1rem min(5rem, 5vw);
 }
 
 .page-navigation .app-link,
@@ -15,27 +13,29 @@
 
 .country-page {
     display: flex;
-    align-items: start;
+    align-items: center;
     gap: 4em;
     flex-wrap: wrap;
 
-    width: 100vw;
-    height: 100vh;
-    height: 100svh;
-
-    padding: 1rem 3rem;
-
-    background-color: var(--bg-color);
+    padding: 1rem min(5rem, 5vw);
 }
 
 .country-page section {
     flex: 1 1 12rem;
+
+    font-size: 1.1rem;
 }
 
 .country-page picture {
-    width: min(28rem + 4vw, 85vw);
+    width: min(42rem + 4vw, 90vw);
 
     box-shadow: 1px 1px 10px var(--shadow-color);
+}
+
+.country-name {
+    line-height: 1rem;
+    margin-bottom: 3rem;
+    font-size: 4rem;
 }
 
 .country-info {

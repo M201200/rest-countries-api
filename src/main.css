@@ -48,7 +48,6 @@
 
   :root {
     --text-color: hsl(200, 15%, 8%);
-    /* --input-color: hsl(0, 0%, 52%); */
     --shadow-color: hsl(0, 0%, 85%);
 
     --bg-color: hsl(0, 0%, 97%);
@@ -64,7 +63,6 @@
 
   :root [data-dark-theme]{
     --text-color: hsl(0, 0%, 100%);
-    /* --input-color: hsl(0, 0%, 52%); */
     --shadow-color: hsl(0, 1%, 15%);
 
 
@@ -76,6 +74,7 @@
   body {
     font-family: 'Nunito Sans', sans-serif;
     color: var(--text-color);
+    background-color: var(--bg-color);
   }
 
   b {
