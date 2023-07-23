@@ -1,0 +1,63 @@
+.country-filter{
+    color: var(--text-color);
+    background-color: var(--bg-color);
+
+    display: flex;
+    justify-content: space-between;
+    align-content: baseline;
+    gap: 2rem;
+    flex-wrap: wrap;
+
+    padding: 2rem;
+}
+
+.search-input {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    height: 2.5rem;
+
+    border-radius: var(--border-radius);
+    padding: 0 0.5rem;
+    overflow: hidden;
+    
+    box-shadow: 0 0 10px var(--shadow-color);
+    background-color: var(--bg-element-color);
+}
+
+.search-input img {
+    height: 1rem;
+}
+
+.search-input input {
+    color: var(--text-color);
+
+    background-color: var(--bg-element-color);
+
+    border: none;
+    padding: 0.5rem 0;
+    min-width: min(18rem, 90vw);
+}
+
+.search-input input:focus {
+    outline: none;
+}
+
+.region-select {
+    min-width: min(15rem, 90vw);
+    height: 2.5rem;
+
+    padding-left: 0.5rem;
+    
+    background-color: var(--bg-element-color);
+    border-radius: var(--border-radius);
+    box-shadow: 0 0 10px var(--shadow-color);
+    border: none;
+    cursor: pointer;
+}
+
+.region-select * {
+    border: none;
+
+}

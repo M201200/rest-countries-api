@@ -1,0 +1,26 @@
+.country-card {
+    background-color: var(--bg-element-color);
+
+    width: 21rem;
+    padding: none;
+
+    box-shadow: 0 1px 10px var(--shadow-color);
+    border-radius: 0 0 var(--border-radius) var(--border-radius);
+
+    overflow: hidden;
+}
+
+.country-card:is(:hover, :focus) {
+    transform: scale(1.05);
+    transition: transform 200ms;
+}
+
+.country-card picture {
+    min-height: 15rem;
+    filter: drop-shadow(0 1px 10px var(--shadow-color)) ;
+}
+
+.country-card section {
+    padding: 1.5rem;
+}
+

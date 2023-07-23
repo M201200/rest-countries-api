@@ -1,11 +1,31 @@
+.page-navigation {
+    background-color: var(--bg-color);
+
+    display: flex;
+    padding: 1rem 3rem;
+}
+
+.page-navigation .app-link,
+.country-page .app-link {
+    border-radius: var(--border-radius);
+    padding: var(--padding);
+    min-width: 6rem;
+    text-align: center;
+}
+
 .country-page {
     display: flex;
-    align-items: center;
+    align-items: start;
     gap: 4em;
     flex-wrap: wrap;
 
-    width: 85vw;
-    margin-inline: auto;
+    width: 100vw;
+    height: 100vh;
+    height: 100svh;
+
+    padding: 1rem 3rem;
+
+    background-color: var(--bg-color);
 }
 
 .country-page section {
@@ -14,6 +34,8 @@
 
 .country-page picture {
     width: min(28rem + 4vw, 85vw);
+
+    box-shadow: 1px 1px 10px var(--shadow-color);
 }
 
 .country-info {
@@ -24,4 +46,15 @@
 
 .country-borders {
     margin-top: 2.5em;
+    line-height: 2rem;
 }
+
+.country-borders span {
+    display: flex;
+    align-content: start;
+    gap: 0.6rem 0.5rem;
+
+    flex: 1;
+    flex-wrap: wrap;
+}
+

@@ -1,10 +1,14 @@
 .main-page{
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
+    align-items: start;
     flex-wrap: wrap;
-    gap: 1rem;
-}
+    gap: 2rem;
 
-.country-card {
-    width: 21rem;
+    padding: 1rem;
+
+    min-height: 100vh;
+    min-height: 100svh;
+
+    background-color: var(--bg-color);
 }

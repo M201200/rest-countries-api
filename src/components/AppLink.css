@@ -1,0 +1,13 @@
+.app-link{
+    background-color: var(--bg-element-color);
+    color: var(--text-color);
+
+    text-decoration: none;
+    box-shadow: 1px 0 10px 1px var(--shadow-color);
+}
+
+.app-link:is(:hover, :focus) {
+    transform: scale(1.05);
+    transition: transform 200ms;
+    outline: none;
+}

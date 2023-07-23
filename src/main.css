@@ -31,6 +31,7 @@
   */
   input, button, textarea, select {
     font: inherit;
+    color: inherit;
   }
   /*
     7. Avoid text overflows
@@ -43,4 +44,44 @@
   */
   #root, #__next {
     isolation: isolate;
+  }
+
+  :root {
+    --text-color: hsl(200, 15%, 8%);
+    /* --input-color: hsl(0, 0%, 52%); */
+    --shadow-color: hsl(0, 0%, 85%);
+
+    --bg-color: hsl(0, 0%, 97%);
+    --bg-element-color: hsl(0, 0%, 100%);
+    --bg-element-color-hover: hsl(0, 0%, 100%);
+
+    --border-radius: 0.2em;
+    --padding: 0.2rem 0.5em;
+    --margin: 0.3em;
+
+    --search-icon: "src\assets\magnifying-glass-light-theme.svg";
+  }
+
+  :root [data-dark-theme]{
+    --text-color: hsl(0, 0%, 100%);
+    /* --input-color: hsl(0, 0%, 52%); */
+    --shadow-color: hsl(0, 1%, 15%);
+
+
+    --bg-color: hsl(207, 26%, 17%);
+    --bg-element-color: hsl(209, 23%, 22%);
+
+  }
+
+  body {
+    font-family: 'Nunito Sans', sans-serif;
+    color: var(--text-color);
+  }
+
+  b {
+    font-weight: 600;
+  }
+
+  p {
+    font-weight: 400;
   }

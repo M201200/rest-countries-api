@@ -1,4 +1,4 @@
-import Navigation from "../components/Navigation"
+import CountryFilter from "../components/CountryFilter"
 import CountryList from "../components/CountryList"
 
 import "./MainPage.css"
@@ -6,11 +6,11 @@ import "./MainPage.css"
 const MainPage = () => {
     return (
         <>
-            <Navigation />
+            <CountryFilter />
             <main className='main-page' key={'main-page'}>
                 <CountryList />
             </main> 
-            </>
+        </>
     )
 }
 

@@ -1,4 +1,5 @@
-import {NavLink } from "react-router-dom"
+import AppLink from "./AppLink"
+import "./CountryCard.css"
 
 const CountryCard = ({flag = '/', 
                       name = 'Not found', 
@@ -7,21 +8,19 @@ const CountryCard = ({flag = '/',
                       capital = 'Not found',
                       id = 'Not found'} = {}) => {
     return (
-        <>
-        <NavLink to={`/${id}`}>
             <div className="country-card">
+                <AppLink to={`/${id}`}>
                 <picture>
                     <img src={flag} alt="country-flag" />
                 </picture>
                 <section>
-                    <h3>{name}</h3>
-                    <p>Population: {population}</p>
-                    <p>Region: {region}</p>
-                    <p>Capital: {capital}</p>
+                    <h2>{name}</h2>
+                    <p><b>Population:</b> {population}</p>
+                    <p><b>Region:</b> {region}</p>
+                    <p><b>Capital:</b> {capital}</p>
                 </section>
+            </AppLink>
             </div>
-        </NavLink>
-        </>  
       )
 }
 
