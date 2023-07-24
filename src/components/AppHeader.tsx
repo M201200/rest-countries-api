@@ -1,38 +1,47 @@
-import { useState } from "react"
-import { useRecoilState } from "recoil";
-import { searchIcon } from "../atoms/atoms";
+import { useEffect, useState } from "react"
+
 import "./AppHeader.css"
 
 const AppHeader = () => {
+	const body = document.body
+	const [icon, setIcon] = useState("☾")
+	const [themeText, setThemeText] = useState("Dark")
+	const isDarkTheme = window.matchMedia("(prefers-color-scheme: dark)").matches
+	const prefersDarkTheme = localStorage.getItem("darkTheme")
 
-    const body = document.body
-    
-    const darkThemeIcon = "src\\assets\\icon-moon.svg"
-    const lightThemeIcon ="src\\assets\\icon-sun.svg"
+    function setDarkTheme() {
+        body.setAttribute("data-dark-theme", "")
+		setIcon("☀")
+		setThemeText("Light")
+    }
 
-    const lightThemeSearchIcon = "src\\assets\\magnifying-glass-light-theme.svg"
-    const darkThemeSearchIcon = "src\\assets\\magnifying-glass-dark-theme.svg"
+	useEffect(() => {
+		if ((prefersDarkTheme === "true") || (isDarkTheme && prefersDarkTheme === null)) {
+           setDarkTheme()
+           localStorage.setItem("darkTheme", "true")
+        } 
+	// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [])
 
-    const [currentSearchIcon, setSearchIcon] = useRecoilState(searchIcon)
-    const [icon, setIcon] = useState(darkThemeIcon)
-    const [themeText, setThemeText] = useState("Dark")
-
-
-    return (
-        <header className="app-header">
-            <h1>Where in the world?</h1>
-            <button 
-            className="theme-button" 
-            onClick={()=> {
-                body.toggleAttribute("data-dark-theme")
-                setIcon(icon === darkThemeIcon? lightThemeIcon: darkThemeIcon)
-                setThemeText(themeText === "Dark"? "Light": "Dark")
-                setSearchIcon(currentSearchIcon === lightThemeSearchIcon? darkThemeSearchIcon: lightThemeSearchIcon)
-                }
-                }>
-            <img className="theme-icon" src={icon} alt="theme-icon" />{themeText} mode</button>
-        </header>
-    )
+	return (
+		<header className="app-header">
+			<h1>Where in the world?</h1>
+			<button
+				className="theme-button"
+				onClick={() => {
+					body.toggleAttribute("data-dark-theme")
+					setIcon(icon === "☾"? "☀": "☾")
+					setThemeText(themeText === "Dark"? "Light": "Dark")
+					prefersDarkTheme === "true"
+						?localStorage.setItem("darkTheme", "false")
+						:localStorage.setItem("darkTheme", "true")
+				}}
+			>
+				<span className="theme-icon">{icon}</span>
+				Toggle {themeText} mode
+			</button>
+		</header>
+	)
 }
 
 export default AppHeader

@@ -57,8 +57,6 @@
     --border-radius: 0.2em;
     --padding: 0.2rem 0.5em;
     --margin: 0.3em;
-
-    --search-icon: "src\assets\magnifying-glass-light-theme.svg";
   }
 
   :root [data-dark-theme]{
@@ -68,7 +66,6 @@
 
     --bg-color: hsl(207, 26%, 17%);
     --bg-element-color: hsl(209, 23%, 22%);
-
   }
 
   body {

@@ -1,19 +1,13 @@
 import { lazy, Suspense } from 'react'
-import { RecoilRoot } from 'recoil'
 import { Routes, Route } from 'react-router-dom'
+import { RecoilRoot } from 'recoil'
 
 import AppHeader from './components/AppHeader'
 import LoadingPage from './pages/LoadingPage'
 import PageNotFound from './pages/PageNotFound'
-// import MainPage from './pages/MainPage'
-// import CountryPage from './pages/CountryPage'
+import MainPage from './pages/MainPage'
 
-const MainPage = lazy(() => import("./pages/MainPage"))
 const CountryPage = lazy(() => import("./pages/CountryPage"))
-
-import './App.css'
-
-
 
 function App() {
 

@@ -1,5 +1,5 @@
-import { searchCountryValue, searchByRegion, searchIcon } from "../atoms/atoms";
-import { useRecoilState, useRecoilValue } from "recoil";
+import { searchCountryValue, searchByRegion } from "../atoms/atoms";
+import { useRecoilState } from "recoil";
 import "./CountryFilter.css"
 
 const CountryFilter = () => {
@@ -7,13 +7,11 @@ const CountryFilter = () => {
 const [inputValue, setInputValue]  = useRecoilState(searchCountryValue)
 const [region, setRegion] = useRecoilState(searchByRegion)
 
-const selectedSearchIcon = useRecoilValue(searchIcon)
-
     return (
         <nav className="country-filter">
 
             <div className="search-input">
-            <img src={selectedSearchIcon} alt="" />
+            <span>🔎︎</span>
             <input type="text" 
             placeholder="Search for a country"
             value={inputValue}
@@ -21,7 +19,6 @@ const selectedSearchIcon = useRecoilValue(searchIcon)
             />  
             </div>
             
-            {/* <div className="region-select"> */}
             <select name="regions" className="region-select" value={region} onChange={event => setRegion(event.target.value)}>
                 <option value="">Filter by Region (All)</option>
                 <option value="Africa">Africa</option>
@@ -30,7 +27,6 @@ const selectedSearchIcon = useRecoilValue(searchIcon)
                 <option value="Europe">Europe</option>
                 <option value="Oceania">Oceania</option>
             </select>    
-            {/* </div> */}
             
         </nav>
         

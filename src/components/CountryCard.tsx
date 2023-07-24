@@ -1,3 +1,4 @@
+import LazyLoad from "react-lazy-load"
 import AppLink from "./AppLink"
 import "./CountryCard.css"
 
@@ -10,9 +11,9 @@ const CountryCard = ({flag = '/',
     return (
             <div className="country-card">
                 <AppLink to={`/${id}`}>
-                <picture>
+                <LazyLoad offset={300}>
                     <img src={flag} alt="country-flag" />
-                </picture>
+                </LazyLoad>
                 <section>
                     <h2>{name}</h2>
                     <p><b>Population:</b> {population}</p>

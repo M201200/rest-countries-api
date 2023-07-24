@@ -13,10 +13,22 @@
 .theme-button {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.8rem;
 
     cursor: pointer;
 
     border: none;
     background: none;
+}
+
+.theme-icon {
+    content: var(--theme-icon);
+    font-size: 2rem;
+    font-weight: 400;
+
+    transform: rotate(-30deg);
+}
+
+.theme-text {
+    content: var(--theme-text);
 }
