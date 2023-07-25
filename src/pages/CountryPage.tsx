@@ -1,16 +1,21 @@
 import { useParams } from "react-router-dom"
 import { CountryData } from "../data/CountryData"
+import { lazy, Suspense } from 'react'
 import AppLink from "../components/AppLink"
-import PageNotFound from "./PageNotFound"
+
+import LoadingPage from "./LoadingPage"
+const PageNotFound = lazy(() => import("../pages/PageNotFound.tsx"))
+
 import "./CountryPage.css"
 
 export default function CountryPage() {
 
 const { countryId } = useParams()
-
+    
 const data = CountryData
 const currentCountryData = data.find(country => country.name === countryId)
-if (typeof currentCountryData === "undefined") return <PageNotFound />
+
+if (typeof currentCountryData === "undefined") return <Suspense fallback={<LoadingPage />}><PageNotFound /></Suspense> 
 
 const currentCountryBorders = currentCountryData.borders
 const borderCountries = data.filter(country => currentCountryBorders?.includes(country.alpha3Code))

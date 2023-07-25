@@ -2,12 +2,12 @@ import { lazy, Suspense } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import { RecoilRoot } from 'recoil'
 
-import AppHeader from './components/AppHeader'
-import LoadingPage from './pages/LoadingPage'
-import PageNotFound from './pages/PageNotFound'
-import MainPage from './pages/MainPage'
+import AppHeader from './components/AppHeader.tsx'
+import MainPage from './pages/MainPage.tsx'
+const CountryPage = lazy(() => import("./pages/CountryPage.tsx"))
 
-const CountryPage = lazy(() => import("./pages/CountryPage"))
+import LoadingPage from './pages/LoadingPage.tsx'
+const PageNotFound = lazy(() => import("./pages/PageNotFound.tsx"))
 
 function App() {
 
@@ -19,7 +19,7 @@ function App() {
           <Routes>
             <Route path="/" element={<MainPage />} />
             <Route path="/:countryId" element={<CountryPage />} />
-            <Route path="*" element ={<PageNotFound />} />
+            <Route path="/*" element ={<PageNotFound />} />
           </Routes>
         </Suspense>
     </RecoilRoot>
