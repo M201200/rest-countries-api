@@ -10,7 +10,7 @@ const CountryCard = ({flag = '/',
                       id = 'Not found'} = {}) => {
     return (
             <div className="country-card">
-                <AppLink to={`/${id}`}>
+                <AppLink to={`/countries/${id}`}>
                 <LazyLoad offset={300}>
                     <img src={flag} alt="country-flag" />
                 </LazyLoad>

@@ -18,7 +18,7 @@ function App() {
         <Suspense fallback={<LoadingPage />}>
           <Routes>
             <Route path="/" element={<MainPage />} />
-            <Route path="/:countryId" element={<CountryPage />} />
+            <Route path="/countries/:countryId" element={<CountryPage />} />
             <Route path="/*" element ={<PageNotFound />} />
           </Routes>
         </Suspense>
