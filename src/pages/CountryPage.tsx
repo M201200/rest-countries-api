@@ -20,7 +20,7 @@ if (typeof currentCountryData === "undefined") return <Suspense fallback={<Loadi
 const currentCountryBorders = currentCountryData.borders
 const borderCountries = data.filter(country => currentCountryBorders?.includes(country.alpha3Code))
                             .map(country => {
-                return <AppLink to={`/${country.name}`} key={country.name}>{country.name}</AppLink>
+                return <AppLink to={`/countries/${country.name}`} key={country.name}>{country.name}</AppLink>
             })
 
 function toFormat (property?: string | string[]) {
